@@ -6,20 +6,20 @@
     <div class="in-container">
       <div class="eco-planet">
         <div class="title">
-          <span id="big" v-motion="mainTitle">ECO PLANET</span>
-          <span id="small" v-motion="mainTitle">ECO Planet은?</span>
+          <span id="big" v-motion="motions.mainTitle">ECO PLANET</span>
+          <span id="small" v-motion="motions.subTitle">ECO Planet은?</span>
         </div>
         <div class="subject">
-          <span>ECO PLANET은 ESG Financial 프로젝트를 진행하고 있는 블록체인 개발 전문 기업입니다.</span>
-          <span>ESG Financial 프로젝트는 ECO DeFi, ECONFT, 두가지 플렛폼을 개발하고 서비스하고 있습니다.</span>
-          <span>ECO DeFi는 Lending DeFi 서비스로 바이낸스 기반으로 개발되었고, ECONFT는 이더리움 기반으로 개발된 NFT플렛폼 입니다.</span>
+          <span v-motion="motions.text1">ECO PLANET은 ESG Financial 프로젝트를 진행하고 있는 블록체인 개발 전문 기업입니다.</span>
+          <span v-motion="motions.text2">ESG Financial 프로젝트는 ECO DeFi, ECONFT, 두가지 플렛폼을 개발하고 서비스하고 있습니다.</span>
+          <span v-motion="motions.text3">ECO DeFi는 Lending DeFi 서비스로 바이낸스 기반으로 개발되었고, ECONFT는 이더리움 기반으로 개발된 NFT플렛폼 입니다.</span>
         </div>
       </div>
 
       <div class="eco-box">
         <div class="defi">
-          <img src="@/assets/images/img_logo_eco1.png"/>
-          <div class="text">
+          <img src="@/assets/images/img_logo_eco1.png" v-motion="motions.box1"/>
+          <div class="text" v-motion="motions.box2">
             <span>신재생에너지 NFT의 발행과 판매, 환경관련 컨텐츠 판매 및 다양한 NFT 판매를 통한 수익의</span>
             <span>일부를 환경단체에 기부하거나 환경보호 관련 활동에 기여할 수 있는 economy를 가진</span>
             <span>NFT 마켓 플레이스 입니다.</span>
@@ -29,26 +29,26 @@
 
       <div class="eco-planet">
         <div class="title">
-          <span id="big">OUR SERVICE</span>
-          <span id="small">ECO Planet에서 제공하는 Service를 확인하세요.</span>
+          <span id="big" v-motion="motions.mainTitle_v">OUR SERVICE</span>
+          <span id="small" v-motion="motions.subTitle_v">ECO Planet에서 제공하는 Service를 확인하세요.</span>
         </div>
         <div class="subject">
-          <span>ECO PLANET은 토큰 발행 부터 Wallet개발, DEX, Defi, NFT등 블록체인 비즈니스에 필요한 모든 개발 서비스를 제공하고 있습니다.</span>
-          <span>이더리움, 클레이튼, BNB, 솔라나, 폴리곤 등 다양한 메인넷 위에 Dapp을 제작해서 온보딩 할 수 있습니다.</span>
-          <span>PtoE 게임부터 NtoE 서비스까지 개발 기획 및 설계를 진행해 드립니다.</span>
+          <span v-motion="motions.text1">ECO PLANET은 토큰 발행 부터 Wallet개발, DEX, Defi, NFT등 블록체인 비즈니스에 필요한 모든 개발 서비스를 제공하고 있습니다.</span>
+          <span v-motion="motions.text2">이더리움, 클레이튼, BNB, 솔라나, 폴리곤 등 다양한 메인넷 위에 Dapp을 제작해서 온보딩 할 수 있습니다.</span>
+          <span v-motion="motions.text3">PtoE 게임부터 NtoE 서비스까지 개발 기획 및 설계를 진행해 드립니다.</span>
         </div>
       </div>
 
       <div class="diagram">
         <div class="image">
-          <img src="@/assets/images/img_diagram1.png" />
-          <img src="@/assets/images/img_diagram2.png" />
-          <img src="@/assets/images/img_diagram3.png" />
+          <img src="@/assets/images/img_diagram1.png" v-motion="motions.dia1" />
+          <img src="@/assets/images/img_diagram2.png" v-motion="motions.dia2" />
+          <img src="@/assets/images/img_diagram3.png" v-motion="motions.dia3" />
         </div>
       </div>
 
       <div class="circle-diagram">
-        <div class="circle1">
+        <div class="circle1" v-motion="motions.cir1">
           <img src="@/assets/images/img_icon_circle1.png"/>
           <span id=cir1>기업 NFT</span>
           <div class="circle1-text1">
@@ -57,7 +57,7 @@
             <span>기업과 고객이 상생하는 생태계를 조성할 수 있도록 설계 및 개발을 진행하고 있습니다.</span>
           </div>
         </div>
-        <div class="circle1">
+        <div class="circle1" v-motion="motions.cir2">
           <div class="circle1-text2">
             <span>브랜드 마케팅을 위한 NFT의 발행은 중요한 이슈로 떠오르고 있습니다. 브랜드의 가치를 NFT화 하여</span>
             <span>주요 고객들에게 소유할 수 있도록 하거나, 타 브랜드와 콜라보에서도 NFT를 활용하고 있습니다.</span>
@@ -66,7 +66,7 @@
           <span id=cir2>브랜드 NFT</span>
           <img src="@/assets/images/img_icon_circle2.png" />
         </div>
-        <div class="circle1">
+        <div class="circle1" v-motion="motions.cir3">
           <span id=cir3>지역관광 NFT</span>
           <img src="@/assets/images/img_icon_circle3.png" />
           <div class="circle1-text3">
@@ -95,7 +95,8 @@ import Carousel from '@/components/Carousel.vue';
 import PortFolio from '@/components/PortFolio.vue';
 import { useMotion } from '@vueuse/motion'
 import { ref } from 'vue'
-import { mainTitle } from '../motions';
+// import { mainTitle, mainTitle_v, subTitle, subTitle_v, text1, text2, text3, box1, box2, dia1, dia2, dia3, cir1, cir2} from '../motions';
+import * as motions from '../motions';
 
 export default {
   components: { Carousel, PortFolio },
@@ -103,27 +104,8 @@ export default {
       slides: ["main_img1.png", "main_img2.png", "main_img3.png"]
   }),
   setup() {
-    const targetEl = ref()
-    useMotion(targetEl, {
-      initial: {
-        scale: 1,
-        opacity: 0,
-        y: 50,
-      },
-      enter: {
-        opacity: 1,
-        y: 0,
-        transition: {
-          y: {
-            delay: 300
-          },
-          // opacity: {
-          //   duration: 1600
-          // }
-        }
-      }
-    })
-    return {targetEl, mainTitle}
+
+    return {}
   }
 }
 </script>
