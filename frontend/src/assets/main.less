@@ -1,0 +1,43 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  transition: 0.3s all ease;
+
+  /* */
+}
+
+html {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  height: 100%;
+  overflow-y: auto;
+  /*火狐 */
+  overflow-y: overlay;
+  /*Chrome */
+  margin: 0px;
+}
+
+#app {
+  height: 100%;
+}
+
+/*스크롤바 스타일 */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+/*스크롤 막대 추적 내부 그림자 + ​​둥근 모서리 정의*/
+::-webkit-scrollbar-track {
+  background-color: transparent !important;
+}
+
+/*定슬라이더 내부 그림자 + ​​둥근 모서리 정의*/
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: #cccccc54;
+}
