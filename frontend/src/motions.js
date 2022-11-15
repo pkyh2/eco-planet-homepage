@@ -203,3 +203,138 @@ export const cir3 = {
     }
   }
 }
+
+export const port1 = {
+  initial: {
+    x: 0,
+    opacity: 0
+  },
+  visibleOnce: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      delay: 300,
+    }
+  }
+}
+export const port2 = {
+  initial: {
+    x: 0,
+    opacity: 0
+  },
+  visibleOnce: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      delay: 400,
+    }
+  }
+}
+export const port3 = {
+  initial: {
+    x: 0,
+    opacity: 0
+  },
+  visibleOnce: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      delay: 500,
+    }
+  }
+}
+export const port4 = {
+  initial: {
+    x: 0,
+    opacity: 0
+  },
+  visibleOnce: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      delay: 600,
+    }
+  }
+}
+export const port5 = {
+  initial: {
+    x: 0,
+    opacity: 0
+  },
+  visibleOnce: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      delay: 700,
+    }
+  }
+}
+export const port6 = {
+  initial: {
+    x: 0,
+    opacity: 0
+  },
+  visibleOnce: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      delay: 800,
+    }
+  }
+}
+
+export const contact1 = {
+  initial: {x: 200, opacity: 0},
+  visibleOnce: {x: 0, opacity: 1, transition: {delay: 100,}}
+}
+export const contact2 = {
+  initial: {x: 200, opacity: 0},
+  visibleOnce: {x: 0, opacity: 1, transition: {delay: 200,}}
+}
+export const contact3 = {
+  initial: {x: 200, opacity: 0},
+  visibleOnce: {x: 0, opacity: 1, transition: {delay: 300,}}
+}
+export const contact4 = {
+  initial: {x: 200, opacity: 0},
+  visibleOnce: {x: 0, opacity: 1, transition: {delay: 400,}}
+}
+export const contact5 = {
+  initial: {x: 200, opacity: 0},
+  visibleOnce: {x: 0, opacity: 1, transition: {delay: 500,}}
+}
+export const contact6 = {
+  initial: {x: 200, opacity: 0},
+  visibleOnce: {x: 0, opacity: 1, transition: {delay: 600,}}
+}
+
+export const contact_t1 = {
+  initial: {x: 0, opacity: 0},
+  visibleOnce: {x: 0, opacity: 1, transition: {delay: 100,}}
+}
+export const contact_t2 = {
+  initial: {x: 0, opacity: 0},
+  visibleOnce: {x: 0, opacity: 1, transition: {delay: 200,}}
+}
+export const contact_t3 = {
+  initial: {x: 0, opacity: 0},
+  visibleOnce: {x: 0, opacity: 1, transition: {delay: 300,}}
+}
+export const contact_t4 = {
+  initial: {x: 0, opacity: 0},
+  visibleOnce: {x: 0, opacity: 1, transition: {delay: 400,}}
+}
+export const contact_t5 = {
+  initial: {x: 0, opacity: 0},
+  visibleOnce: {x: 0, opacity: 1, transition: {delay: 500,}}
+}
+export const contact_t6 = {
+  initial: {x: 0, opacity: 0},
+  visibleOnce: {x: 0, opacity: 1, transition: {delay: 600,}}
+}
+
+export const send = {
+  initial: {x: 0, opacity: 0},
+  visibleOnce: {x: 0, opacity: 1, transition: {delay: 700,}}
+}
+

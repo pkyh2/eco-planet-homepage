@@ -69,7 +69,7 @@
         <div class="circle1" v-motion="motions.cir3">
           <span id=cir3>지역관광 NFT</span>
           <img src="@/assets/images/img_icon_circle3.png" />
-          <div class="circle1-text3">
+          <div class="circle1-text1">
             <span>지역 관광 활성화를 위한 NFT 생태계의 설계 및 발행에 대해서 컨설팅부터 개발 및 발행까지</span>
             <span>블록체인의 모든 서비스를 지원해 드립니다.</span>
           </div>
@@ -78,34 +78,172 @@
 
       <div class="eco-planet">
         <div class="title">
-          <span id="big">PORTFOLIO</span>
-          <span id="small">ECO Planet의 PortFolio를 확인하세요.</span>
+          <span id="big" v-motion="motions.mainTitle_v">PORTFOLIO</span>
+          <span id="small" v-motion="motions.subTitle_v">ECO Planet의 PortFolio를 확인하세요.</span>
         </div>
       </div>
       <div class="portfolio">
         <PortFolio></PortFolio>
       </div>
 
+      <div class="eco-planet">
+        <div class="title">
+          <span id="big" v-motion="motions.mainTitle_v">PARTNER</span>
+          <span id="small" v-motion="motions.subTitle_v">ECO Planet과 함께하는 Partner사 입니다.</span>
+        </div>
+      </div>
+      <div class="partners">
+        <div class="partners-item" v-for="(item, index) in partners" :key="index">
+          <img 
+            v-if="index <= 3 || index >= 8"
+            v-motion
+            :initial="{x:0, opacity:0}"
+            :visibleOnce="{x:0, opacity:1, transition:{delay: `${(index+1)*100}`}}"
+            :src="require(`@/assets/images/${item}`)"
+            />
+          <img 
+            v-else
+            v-motion
+            :initial="{x:0, opacity:0}"
+            :visibleOnce="{x:0, opacity:1, transition:{delay: `${(partners.length - index+1)*100}`}}"
+            :src="require(`@/assets/images/${item}`)"
+            />
+        </div>
+      </div>
+
+      <div class="contact-us">
+        <!-- <div class="eco-planet">
+          <div class="title">
+            <span id="big" v-motion="motions.mainTitle_v">CONTACT US</span>
+            <span id="small" v-motion="motions.subTitle_v">문의 및 제휴 요청</span>
+          </div>
+        </div>
+        <div class="inquire-form" v-for="(index, contact) in contact" :key="index">
+          <div class="form">
+            <div class="form-title"
+              v-motion
+              :initial="{x:0, opacity:0}"
+              :visibleOnce="{x:0, opacity:1, transition:{delay: `${(index+1)*100}`}}"  
+            >
+              <img src="@/assets/images/img_icon_contact.png"/>
+              <span>{{contact}}</span>
+            </div>
+            <input type="text" v-model="state.name" placeholder="이름을 입력하세요" required>
+          </div>
+        </div> -->
+
+        <div class="inquire-form">
+          <div class="form">
+            <div class="form-title">
+              <img v-motion="motions.contact_t1" src="@/assets/images/img_icon_contact.png" />
+              <span v-motion="motions.contact_t1">이름</span>
+            </div>
+            <input type="text" v-model="name" placeholder="이름을 입력하세요." v-motion="motions.contact1" required>
+          </div>
+          <div class="form">
+            <div class="form-title">
+              <img v-motion="motions.contact_t2" src="@/assets/images/img_icon_contact.png" />
+              <span v-motion="motions.contact_t2">업체명</span>
+            </div>
+            <input type="text" v-model="company" placeholder="업체명을 입력하세요." v-motion="motions.contact2" required>
+          </div>
+          <div class="form">
+            <div class="form-title">
+              <img v-motion="motions.contact_t3" src="@/assets/images/img_icon_contact.png" />
+              <span v-motion="motions.contact_t3">연락처</span>
+            </div>
+            <input type="text" v-model="phone" placeholder="연락처을 입력하세요." v-motion="motions.contact3" required>
+          </div>
+          <div class="form">
+            <div class="form-title">
+              <img v-motion="motions.contact_t4" src="@/assets/images/img_icon_contact.png" />
+              <span v-motion="motions.contact_t4">이메일</span>
+            </div>
+            <input type="text" v-model="email" placeholder="이메일을 입력하세요." v-motion="motions.contact4" required>
+          </div>
+          <div class="form">
+            <div class="form-title">
+              <img v-motion="motions.contact_t5" src="@/assets/images/img_icon_contact.png" />
+              <span v-motion="motions.contact_t5">제목</span>
+            </div>
+            <input type="text" v-model="title" placeholder="제목을 입력하세요." v-motion="motions.contact5" required>
+          </div>
+        </div>
+        <div class="text-form">
+          <img v-motion="motions.contact_t6" src="@/assets/images/img_icon_contact.png" />
+          <span v-motion="motions.contact_t6">내용</span>
+          <textarea v-model="message" placeholder="내용을 입력하세요." cols="30" rows="10" v-motion="motions.contact6"></textarea>
+        </div>
+        <div class="send-button" v-motion="motions.send" @click="sendEmail()">
+            <span v-motion="motions.send">SAND</span>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+const motions = require("../motions")
 import Carousel from '@/components/Carousel.vue';
 import PortFolio from '@/components/PortFolio.vue';
-import { useMotion } from '@vueuse/motion'
-import { ref } from 'vue'
-// import { mainTitle, mainTitle_v, subTitle, subTitle_v, text1, text2, text3, box1, box2, dia1, dia2, dia3, cir1, cir2} from '../motions';
-import * as motions from '../motions';
+// import { useMotion } from '@vueuse/motion'
+// import { ref } from 'vue'
 
 export default {
   components: { Carousel, PortFolio },
   data: () => ({
-      slides: ["main_img1.png", "main_img2.png", "main_img3.png"]
+    slides: ["main_img1.png", "main_img2.png", "main_img3.png"],
+    state: {
+      name: '',
+      company: '',
+      phone: '',
+      email: '',
+      title: '',
+    },
+    contact:["이름", "업체명", "연락처", "이메일", "제목"],
+    partners: [
+      "img_partners_WaltonChain.png",
+      "img_partners_prix.png",
+      "img_partners_KPOWER.png",
+      "img_partners_pingstone.png",
+      "world_miss_university_logo.png",
+      "img_partners_F1soft.png",
+      "img_partners_ecomagic.png",
+      "img_partners_Dcoin.png",
+      "img_partners_SKYplay.png",
+      "img_partners_ENPGAMES.png",
+      "img_partners_AniAsso.png",
+      "img_partners_TETERU.png"
+    ]
   }),
-  setup() {
+  setup() { return { motions } },
+  mounted() {
+    this.partLength()
+    const smtp = document.createElement('script')
+    smtp.setAttribute('src', 'https://smtpjs.com/v3/smtp.js')
+    document.head.appendChild(smtp)
+  },
+  methods: {
+    partLength() {
+      console.log(this.partners.length)
+      console.log(this.partners[0])
+      console.log(this.partners[4])
+    },
 
-    return {}
+    sendEmail() {
+      Email.send({
+        SecureToken: "9a8c5133-2ae7-4a7a-bae4-1c3069a9fa51",
+        To: 'info@eco-planet.io',
+        Name: this.state.name,
+        Company: this.state.company,
+        Phone: this.state.phone,
+        From: 'info@eco-planet.io',
+        Subject: this.state.title,
+        Body: `[Name:${this.state.name}][Company:${this.state.company}][Phone:${this.state.phone}]`
+      }).then(
+        message => alert(message)
+      );
+    }
   }
 }
 </script>
@@ -219,14 +357,6 @@ export default {
           margin-left: auto;
           margin-right: 10px;
         }
-        &-text3 {
-          display: flex;
-          flex-direction: column;
-          align-items: flex-start;
-          justify-content: center;
-          margin-right: auto;
-          margin-left: 10px;
-        }
         span {font-size: 18px; font-weight: 400;}
         span#cir1{
           position: absolute;
@@ -256,7 +386,97 @@ export default {
     .portfolio {
       width: 100%;
       height: 900px;
+    }
 
+    .partners {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 1240px;
+      flex-wrap: wrap;
+      &-item {
+        display: flex;
+        img {
+          width: 150px;
+          margin:50px;
+        }
+      }
+    }
+
+    .contact-us {
+      margin-top: 150px;
+      font-family: 'Noto sans 400 KR';
+      .title {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        span#big {
+          font-size: 50px;
+          font-weight: 900
+        }
+        span#small {font-weight: bold;}
+      }
+      .inquire-form {
+        margin-top: 50px;
+        .form {
+          margin-top: 20px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          &-title {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            span {
+              font-size: 16px;
+              font-weight: bold;
+            }
+            img { margin-right:10px;}
+          }
+          input {
+            margin-left: 30px;
+            width: 600px !important;
+            border-top: 0px;
+            border-left: 0px;
+            border-right: 0px;
+            border-bottom: 1px solid gray;
+          }
+        }
+      }
+      .text-form {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 100px;
+        span {
+          font-size: 16px;
+          font-weight: bold;
+        }
+        textarea {
+          margin-left: 30px;
+          width: 600px !important;
+          border-top: 0px;
+          border-left: 0px;
+          border-right: 0px;
+          border-bottom: 1px solid gray;
+        }
+        // img { margin-right:10px}
+      }
+      .send-button {
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #696969;
+        width: 150px;
+        height: 40px;
+        font-size: 18px;
+        border-radius: 10px;
+        color: #f3f3f3;
+        margin-left: auto;
+        cursor: pointer;
+      }
     }
   }
 }

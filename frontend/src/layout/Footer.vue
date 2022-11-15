@@ -102,7 +102,7 @@ export default {
 
 <style lang="less">
 .footer {
-  margin-top: 300px;
+  margin-top: 100px;
   background: #f5f5f5;
   box-shadow: 0px 6px 30px rgba(84, 102, 154, 0.1);
   display: flex;
