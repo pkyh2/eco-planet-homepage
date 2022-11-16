@@ -112,35 +112,39 @@
       </div>
 
       <div class="contact-us">
-        <!-- <div class="eco-planet">
+        <div class="eco-planet">
           <div class="title">
             <span id="big" v-motion="motions.mainTitle_v">CONTACT US</span>
             <span id="small" v-motion="motions.subTitle_v">문의 및 제휴 요청</span>
           </div>
         </div>
-        <div class="inquire-form" v-for="(index, contact) in contact" :key="index">
-          <div class="form">
-            <div class="form-title"
-              v-motion
-              :initial="{x:0, opacity:0}"
-              :visibleOnce="{x:0, opacity:1, transition:{delay: `${(index+1)*100}`}}"  
-            >
-              <img src="@/assets/images/img_icon_contact.png"/>
-              <span>{{contact}}</span>
-            </div>
-            <input type="text" v-model="state.name" placeholder="이름을 입력하세요" required>
-          </div>
-        </div> -->
 
         <div class="inquire-form">
-          <div class="form">
+          <div class="form" v-for="(name, value, index) in state" :key="index" :value="value">
+            <div class="form-title"
+              v-motion
+              :initial="{ x: 0, opacity: 0 }"
+              :visibleOnce="{x:0, opacity:1, transition:{delay: `${(index+1)*100}`}}"
+            >
+              <img src="@/assets/images/img_icon_contact.png" />
+              <span>{{contact[index]}}</span>
+            </div>
+            <input type="text"
+              :v-model="value"
+              :placeholder="`${contact[index]}을 입력하세요.`"
+              v-motion
+              :initial="{x:200, opacity:0}"
+              :visibleOnce="{x:0, opacity:1, transition:{delay: `${(index+1)*100}`}}"
+              required>
+          </div>
+          <!-- <div class="form">
             <div class="form-title">
-              <img v-motion="motions.contact_t1" src="@/assets/images/img_icon_contact.png" />
-              <span v-motion="motions.contact_t1">이름</span>
+              <img src="@/assets/images/img_icon_contact.png" />
+              <span>이름</span>
             </div>
             <input type="text" v-model="name" placeholder="이름을 입력하세요." v-motion="motions.contact1" required>
-          </div>
-          <div class="form">
+          </div> -->
+          <!-- <div class="form">
             <div class="form-title">
               <img v-motion="motions.contact_t2" src="@/assets/images/img_icon_contact.png" />
               <span v-motion="motions.contact_t2">업체명</span>
@@ -167,15 +171,24 @@
               <span v-motion="motions.contact_t5">제목</span>
             </div>
             <input type="text" v-model="title" placeholder="제목을 입력하세요." v-motion="motions.contact5" required>
-          </div>
+          </div> -->
         </div>
         <div class="text-form">
           <img v-motion="motions.contact_t6" src="@/assets/images/img_icon_contact.png" />
           <span v-motion="motions.contact_t6">내용</span>
           <textarea v-model="message" placeholder="내용을 입력하세요." cols="30" rows="10" v-motion="motions.contact6"></textarea>
         </div>
-        <div class="send-button" v-motion="motions.send" @click="sendEmail()">
-            <span v-motion="motions.send">SAND</span>
+        <div class="contact-bottom">
+          <div class="check-box">
+            <input type="checkbox" @click="checkBox($event)">
+            <span>개인정보 처리방침에 동의합니다.</span>
+          </div>
+          <div v-if="this.checked == true" class="send-button-true" @click="sendEmail()">
+              <span>SAND</span>
+          </div>
+          <div v-else class="send-button-false">
+              <span>SAND</span>
+          </div>
         </div>
       </div>
     </div>
@@ -186,7 +199,7 @@
 const motions = require("../motions")
 import Carousel from '@/components/Carousel.vue';
 import PortFolio from '@/components/PortFolio.vue';
-// import { useMotion } from '@vueuse/motion'
+import { useMotion } from '@vueuse/motion'
 // import { ref } from 'vue'
 
 export default {
@@ -214,7 +227,8 @@ export default {
       "img_partners_ENPGAMES.png",
       "img_partners_AniAsso.png",
       "img_partners_TETERU.png"
-    ]
+    ],
+    checked: false
   }),
   setup() { return { motions } },
   mounted() {
@@ -228,8 +242,8 @@ export default {
       console.log(this.partners.length)
       console.log(this.partners[0])
       console.log(this.partners[4])
+      console.log(this.state.name)
     },
-
     sendEmail() {
       Email.send({
         SecureToken: "9a8c5133-2ae7-4a7a-bae4-1c3069a9fa51",
@@ -243,6 +257,13 @@ export default {
       }).then(
         message => alert(message)
       );
+    },
+    checkBox(e) {
+      if (e.target.checked) {
+        this.checked = true
+      } else {
+        this.checked = false
+      }
     }
   }
 }
@@ -425,9 +446,6 @@ export default {
           align-items: center;
           justify-content: space-between;
           &-title {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
             span {
               font-size: 16px;
               font-weight: bold;
@@ -461,21 +479,47 @@ export default {
           border-right: 0px;
           border-bottom: 1px solid gray;
         }
-        // img { margin-right:10px}
       }
-      .send-button {
+      .contact-bottom {
         margin-top: 20px;
         display: flex;
         align-items: center;
         justify-content: center;
-        background: #696969;
-        width: 150px;
-        height: 40px;
-        font-size: 18px;
-        border-radius: 10px;
-        color: #f3f3f3;
-        margin-left: auto;
-        cursor: pointer;
+        .check-box {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          input[type="checkbox"] {
+            margin-right: 5px;
+            width: 20px;
+            height: 20px;
+          }
+        }
+        .send-button-true {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: #D953BC;
+          width: 150px;
+          height: 40px;
+          font-size: 18px;
+          border-radius: 10px;
+          color: #f3f3f3;
+          margin-left: auto;
+          cursor: pointer;
+        }
+        .send-button-false {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: #696969;
+          width: 150px;
+          height: 40px;
+          font-size: 18px;
+          border-radius: 10px;
+          color: #f3f3f3;
+          margin-left: auto;
+        }
       }
     }
   }
