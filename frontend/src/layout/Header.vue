@@ -4,14 +4,13 @@
       <div class="left">
         <img src="@/assets/images/img_eco-planet_logo.png" alt="eco-planet-logo"/>
         <div class="menu">
-          <span v-for="m in menu" :key="m" @click="goToPage(m)">{{m}}</span>
+          <span v-for="m in menu" :key="m" @click="goToPage(m)">{{$t('header.' + m.name)}}</span>
         </div>
       </div>
-
       <div class="right">
         <div class="select-box">
-          <select v-model="onePick">
-            <option v-for="lang in language" :key="lang" :value="lang.value">{{lang.text}}</option>
+          <select v-model="$i18n.locale">
+            <option v-for="locale in $i18n.availableLocales" :key="`locale-${locale}`" :value="locale">{{locale}}</option>
           </select>
         </div>
       </div>
@@ -25,19 +24,14 @@ export default {
   name: {},
   components: {},
   data: () => ({
-    menu: ["Eco planet", "Service", "Portfolio", "Partner", "Inquire"],
+    menu: [
+      { name: "header1"},
+      { name: "header2"},
+      { name: "header3"},
+      { name: "header4"},
+      { name: "header5"},
+    ],
     hoverColor: "#3d6fe3",
-    onePick: "0",
-    language: [
-      {
-        text: "Korean",
-        value: "0"
-      },
-      {
-        text: "English",
-        value: "0"
-      }
-    ]
   }),
   methods: {
     goToPage(menu) {

@@ -16,7 +16,7 @@ export default {
   components: {},
   props: ["slides", "currentSlide"],
   emits: ['prev', 'next'],
-  data () {},
+  data: () => ({}),
   setup () {},
   created () {},
   mounted () {},

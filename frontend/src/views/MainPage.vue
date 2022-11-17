@@ -6,36 +6,32 @@
     <div class="in-container">
       <div class="eco-planet">
         <div class="title">
-          <span id="big" v-motion="motions.mainTitle">ECO PLANET</span>
-          <span id="small" v-motion="motions.subTitle">ECO Planet은?</span>
+          <span id="big" v-motion="motions.mainTitle">{{$t('ecoPlanet.title')}}</span>
+          <span id="small" v-motion="motions.subTitle">{{$t('ecoPlanet.sub_title')}}</span>
         </div>
         <div class="subject">
-          <span v-motion="motions.text1">ECO PLANET은 ESG Financial 프로젝트를 진행하고 있는 블록체인 개발 전문 기업입니다.</span>
-          <span v-motion="motions.text2">ESG Financial 프로젝트는 ECO DeFi, ECONFT, 두가지 플렛폼을 개발하고 서비스하고 있습니다.</span>
-          <span v-motion="motions.text3">ECO DeFi는 Lending DeFi 서비스로 바이낸스 기반으로 개발되었고, ECONFT는 이더리움 기반으로 개발된 NFT플렛폼 입니다.</span>
+          <span v-motion="motions.text1">{{$t('ecoPlanet.ecoDesc1')}}</span>
+          <span v-motion="motions.text2">{{$t('ecoPlanet.ecoDesc2')}}</span>
+          <span v-motion="motions.text3">{{$t('ecoPlanet.ecoDesc3')}}</span>
         </div>
       </div>
 
       <div class="eco-box">
         <div class="defi">
           <img src="@/assets/images/img_logo_eco1.png" v-motion="motions.box1"/>
-          <div class="text" v-motion="motions.box2">
-            <span>신재생에너지 NFT의 발행과 판매, 환경관련 컨텐츠 판매 및 다양한 NFT 판매를 통한 수익의</span>
-            <span>일부를 환경단체에 기부하거나 환경보호 관련 활동에 기여할 수 있는 economy를 가진</span>
-            <span>NFT 마켓 플레이스 입니다.</span>
-          </div>
+          <div class="text" v-motion="motions.box2">{{$t('ecoPlanet.ecoBox')}}</div>
         </div>
       </div>
 
       <div class="eco-planet">
         <div class="title">
-          <span id="big" v-motion="motions.mainTitle_v">OUR SERVICE</span>
-          <span id="small" v-motion="motions.subTitle_v">ECO Planet에서 제공하는 Service를 확인하세요.</span>
+          <span id="big" v-motion="motions.mainTitle_v">{{$t('ourService.title')}}</span>
+          <span id="small" v-motion="motions.subTitle_v">{{$t('ourService.sub_title')}}</span>
         </div>
         <div class="subject">
-          <span v-motion="motions.text1">ECO PLANET은 토큰 발행 부터 Wallet개발, DEX, Defi, NFT등 블록체인 비즈니스에 필요한 모든 개발 서비스를 제공하고 있습니다.</span>
-          <span v-motion="motions.text2">이더리움, 클레이튼, BNB, 솔라나, 폴리곤 등 다양한 메인넷 위에 Dapp을 제작해서 온보딩 할 수 있습니다.</span>
-          <span v-motion="motions.text3">PtoE 게임부터 NtoE 서비스까지 개발 기획 및 설계를 진행해 드립니다.</span>
+          <span v-motion="motions.text1">{{$t('ourService.service1')}}</span>
+          <span v-motion="motions.text2">{{$t('ourService.service2')}}</span>
+          <span v-motion="motions.text3">{{$t('ourService.service3')}}</span>
         </div>
       </div>
 
@@ -50,7 +46,7 @@
       <div class="circle-diagram">
         <div class="circle1" v-motion="motions.cir1">
           <img src="@/assets/images/img_icon_circle1.png"/>
-          <span id=cir1>기업 NFT</span>
+          <span id=cir1>{{$t('cirDiagram.title1')}}</span>
           <div class="circle1-text1">
             <span>기업 전용 NFT는 회사 홈페이지의 회원 증명 NFT, 기업의 임직원 NFT 등 다양한 NFT를 기획 발행하고 있습니다.</span>
             <span>마케팅용으로 고객과의 소통을 위한 NFT를 활용하여 고객 데이터의 주권을 고객에게 제공하고</span>
@@ -325,12 +321,11 @@ export default {
           display: flex;
           flex-direction: column;
           justify-content: center;
-          span {
-            font-size: 16px;
-            color: #333333
-          }
+          font-size: 16px;
+          color: #333333;
+          margin-right: 40px;
         }
-        img {margin-right: 25px; width: 350px}
+        img {margin: 50px; width: 350px}
       }
     }
 

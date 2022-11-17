@@ -1,0 +1,65 @@
+{
+  "header": {
+    "header1" : "에코플레닛",
+    "header2" : "서비스",
+    "header3" : "포트폴리오",
+    "header4" : "파트너",
+    "header5" : "문의"
+  },
+  "ecoPlanet": {
+    "title": "ECO PLANET",
+    "sub_title": "About",
+    "ecoDesc1": "ECO PLANET is a blockchain development company running ESG Financial Project.",
+    "ecoDesc2": "ESG Financial Project developed and operating 2 platforms: ECO DeFi and ECO NFT.",
+    "ecoDesc3": "ECO DeFi is a defi lending platform deployed on BNB Chain, ECO NFT is NFT platform deployed on Ethereum.",
+    "ecoBox": "ECO NFT is NFT marketplace, where part of the profit is donated to Eco organizations for environmental protection campaigns. On the platform users can purchase renewable energy NFTs, environment related content NFTs, and other eco related NFTs."
+  },
+  "ourService": {
+    "title": "OUR SERVICE",
+    "sub_title": "Check out the services provided by ECO PLANET.",
+    "service1": "ECO PLANET provides all the development services required for blockchain business, such as token issuance, wallet development, DEX, DeFi and NFT.",
+    "service2": "You can create and onboard Dapps on various mainnets such as Ethereum, Klaytn, BNB, Chain, Solana, and Polygon.",
+    "service3": "Planning, development and design are provided for P2E games and other \"To Earn\" (2E) services."
+  },
+  "cirDiagram": {
+    "title1": "Enterprise NFT",
+    "enterpriseNFT": "Various Enterprise NFTs such as the member ID NFT on the company website as well as the employee NFTs will be issued for organizations. By utilizing NFT for communication with customers for marketing purposes, we ensure sovereignty of customer data and create  ecosystem where companies and customers can coexist.",
+    "title2": "Brand NFT",
+    "brandNFT": "Minting NFTs is an essential part for Brand Marketing. Brand value tied to NFTs which can be owned by major customers or being utilized for collaborations. Brand NFTs in the metaverse will have more explosive brand power.",
+    "title3": "Local tourism NFT",
+    "localTourismNFT": "To revitalize local tourism the company provides full package of the blockchain services from consultations to development, issuance and design of the NFT ecosystem."
+  },
+  "portfolio": {
+    "title": "PORTFOLIO",
+    "sub_title": "Check out ECO PLANET PortFolio",
+    "pf1": "ECO DeFi",
+    "pf2": "ECO NFT",
+    "pf3": "Teteru NFT",
+    "pf4": "World Miss University NFT",
+    "pf5": "ECO-In Tree NFT",
+    "pf6": "ENP GAMES PtoE game"
+  },
+  "partners": {
+    "title": "PARTNER",
+    "sub_title": "Partnering companies."
+  },
+  "contact": {
+    "title": "CONTACT US",
+    "sub_title": "Inquiries",
+    "subject": "Title",
+    "name": "Name",
+    "co_name": "Company Name",
+    "phone": "Phone",
+    "email": "E-mail",
+    "inquiry": "Inquires",
+    "agree": "I agree to the Privacy Policy..",
+    "send": "send"
+  },
+  "footer": {
+    "company": "ECO PLANET Co. Ltd.",
+    "address": "5th floor, 63, Seochojungang-ro, Seocho-gu, Seoul, Republic of Korea",
+    "telephone": "Tel: 02.6101.9955",
+    "email": "E-mail: info@eco-planet.io",
+    "copyright": "Copyright 2022 ECO PLANET ALL right reserved."
+  }
+}
