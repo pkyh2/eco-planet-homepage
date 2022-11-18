@@ -1,7 +1,8 @@
 <template>
   <div class="home">
     <div class="home-banner">
-      <Carousel :slides="slides"/>
+      <Carousel v-if="$i18n.locale == 'Korean'" :slides="slides.kor"/>
+      <Carousel v-else :slides="slides.eng"/>
     </div>
     <div class="in-container">
       <div class="eco-planet">
@@ -36,10 +37,15 @@
       </div>
 
       <div class="diagram">
-        <div class="image">
+        <div v-if="$i18n.locale == 'Korean'" class="image">
           <img src="@/assets/images/img_diagram1.png" v-motion="motions.dia1" />
           <img src="@/assets/images/img_diagram2.png" v-motion="motions.dia2" />
           <img src="@/assets/images/img_diagram3.png" v-motion="motions.dia3" />
+        </div>
+        <div v-else class="image">
+          <img src="@/assets/images/img_diagram1_eng.png" v-motion="motions.dia1" />
+          <img src="@/assets/images/img_diagram2_eng.png" v-motion="motions.dia2" />
+          <img src="@/assets/images/img_diagram3_eng.png" v-motion="motions.dia3" />
         </div>
       </div>
 
@@ -84,20 +90,20 @@
         </div>
       </div>
       <div class="partners">
-        <div class="partners-item" v-for="(item, index) in partners" :key="index">
+        <div class="partners-item" v-for="item in partners" :key="item.id">
           <img 
-            v-if="index <= 3 || index >= 8"
+            v-if="item.id <= 4 || item.id > 8"
             v-motion
             :initial="{x:0, opacity:0}"
-            :visibleOnce="{x:0, opacity:1, transition:{delay: `${(index+1)*100}`}}"
-            :src="require(`@/assets/images/${item}`)"
+            :visibleOnce="{x:0, opacity:1, transition:{delay: `${(partners.length -item.id+1)*100}`}}"
+            :src="require(`@/assets/images/${item.image}`)"
             />
           <img 
             v-else
             v-motion
             :initial="{x:0, opacity:0}"
-            :visibleOnce="{x:0, opacity:1, transition:{delay: `${(partners.length - index+1)*100}`}}"
-            :src="require(`@/assets/images/${item}`)"
+            :visibleOnce="{x:0, opacity:1, transition:{delay: `${(item.id+1)*100}`}}"
+            :src="require(`@/assets/images/${item.image}`)"
             />
         </div>
       </div>
@@ -163,8 +169,15 @@ import PortFolio from '@/components/PortFolio.vue';
 export default {
   components: { Carousel, PortFolio },
   data: () => ({
-    slides_kor: ["main_img1.png", "main_img2.png", "main_img3.png"],
-    slides_eng: ["main_img1.png", "main_img2.png", "main_img3.png"],
+    slides: {
+      kor: ["main_img1.png", "main_img2.png", "main_img3.png"],
+      eng: ["main_img1_eng.png", "main_img2_eng.png", "main_img3_eng.png"]
+    },
+    diagram: {
+      kor: ["img_diagram1.png", "img_diagram2.png", "img_diagram3.png"],
+      eng: ["img_diagram1_eng.png", "img_diagram2_eng.png", "img_diagram3_eng.png"]
+    },
+
     state: {
       name: '',
       company: '',
@@ -174,35 +187,64 @@ export default {
     },
     contact:["subject", "name", "co_name", "phone", "email", "enter_subject", "enter_name", "enter_co_name", "enter_phone", "enter_email"],
     partners: [
-      "img_partners_WaltonChain.png",
-      "img_partners_prix.png",
-      "img_partners_KPOWER.png",
-      "img_partners_pingstone.png",
-      "world_miss_university_logo.png",
-      "img_partners_F1soft.png",
-      "img_partners_ecomagic.png",
-      "img_partners_Dcoin.png",
-      "img_partners_SKYplay.png",
-      "img_partners_ENPGAMES.png",
-      "img_partners_AniAsso.png",
-      "img_partners_TETERU.png"
+      {
+        id: 1,
+        image: "img_partners_WaltonChain.png"
+      },
+      {
+        id: 2,
+        image: "img_partners_prix.png"
+      },
+      {
+        id: 3,
+        image: "img_partners_KPOWER.png"
+      },
+      {
+        id: 4,
+        image: "img_partners_pingstone.png"
+      },
+      {
+        id: 5,
+        image: "img_partners_wmu.png"
+      },
+      {
+        id: 6,
+        image: "img_partners_ecomagic.png"
+      },
+      {
+        id: 7,
+        image: "img_partners_F1soft.png"
+      },
+      {
+        id: 8,
+        image: "img_partners_Dcoin.png"
+      },
+      {
+        id: 9,
+        image: "img_partners_SKYplay.png"
+      },
+      {
+        id: 10,
+        image: "img_partners_ENPGAMES.png"
+      },
+      {
+        id: 11,
+        image: "img_partners_AniAsso.png"
+      },
+      {
+        id: 12,
+        image: "img_partners_TETERU.png"
+      },
     ],
     checked: false
   }),
   setup() { return { motions } },
   mounted() {
-    this.partLength()
     const smtp = document.createElement('script')
     smtp.setAttribute('src', 'https://smtpjs.com/v3/smtp.js')
     document.head.appendChild(smtp)
   },
   methods: {
-    partLength() {
-      console.log(this.partners.length)
-      console.log(this.partners[0])
-      console.log(this.partners[4])
-      console.log(this.state.name)
-    },
     sendEmail() {
       Email.send({
         SecureToken: "9a8c5133-2ae7-4a7a-bae4-1c3069a9fa51",
