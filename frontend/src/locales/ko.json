@@ -8,58 +8,65 @@
   },
   "ecoPlanet": {
     "title": "ECO PLANET",
-    "sub_title": "About",
-    "ecoDesc1": "ECO PLANET is a blockchain development company running ESG Financial Project.",
-    "ecoDesc2": "ESG Financial Project developed and operating 2 platforms: ECO DeFi and ECO NFT.",
-    "ecoDesc3": "ECO DeFi is a defi lending platform deployed on BNB Chain, ECO NFT is NFT platform deployed on Ethereum.",
-    "ecoBox": "ECO NFT is NFT marketplace, where part of the profit is donated to Eco organizations for environmental protection campaigns. On the platform users can purchase renewable energy NFTs, environment related content NFTs, and other eco related NFTs."
+    "sub_title": "ECO PLANET은?",
+    "ecoDesc1": "ECO PLANET은 ESG Financial 프로젝트를 진행하고 있는 블록체인 개발 전문 기업입니다.",
+    "ecoDesc2": "ESG Financial 프로젝트는 ECO DeFi, ECONFT, 두가지 플랫폼을 개발하고 서비스하고 있습니다.",
+    "ecoDesc3": "ECO DeFi는 Iending DeFi 서비스로 바이낸스 기반으로 개발되었고, ECONFT는 이더리움 기반으로 개발된 NFT 플렛폼 입니다.",
+    "ecoBox": "신재생에너지 NFT의 발행과 판매, 환경관련 콘텐츠 판매 및 다양한 NFT 판매를 통한 수익의 일부를 환경단체에 기부하거나 환경보호 관련 활동에 기여할 수 있는 economy를 가진 NFT마켓 플레이스 입니다."
   },
   "ourService": {
     "title": "OUR SERVICE",
-    "sub_title": "Check out the services provided by ECO PLANET.",
-    "service1": "ECO PLANET provides all the development services required for blockchain business, such as token issuance, wallet development, DEX, DeFi and NFT.",
-    "service2": "You can create and onboard Dapps on various mainnets such as Ethereum, Klaytn, BNB, Chain, Solana, and Polygon.",
-    "service3": "Planning, development and design are provided for P2E games and other \"To Earn\" (2E) services."
+    "sub_title": "ECO Planet에서 제공하는 Service를 확인하세요.",
+    "service1": "ECO PLANET 은 토큰 발행 부터 월렛개발, DEX, Defi, NFT 등 블록체인비즈니스에 필요한 모든 개발 서비스를 제공하고 있습니다.",
+    "service2": "이더리움, 클레이튼, BNB, 솔라나, 폴리곤 등 다양한 메인넷 위에 Dapp을 제작해서 온보딩 할수 있습니다.",
+    "service3": "PtoE 게임 부터 NtoE 서비스까지 개발 기획 및 설계를 진행해 드립니다."
   },
   "cirDiagram": {
-    "title1": "Enterprise NFT",
-    "enterpriseNFT": "Various Enterprise NFTs such as the member ID NFT on the company website as well as the employee NFTs will be issued for organizations. By utilizing NFT for communication with customers for marketing purposes, we ensure sovereignty of customer data and create  ecosystem where companies and customers can coexist.",
-    "title2": "Brand NFT",
-    "brandNFT": "Minting NFTs is an essential part for Brand Marketing. Brand value tied to NFTs which can be owned by major customers or being utilized for collaborations. Brand NFTs in the metaverse will have more explosive brand power.",
-    "title3": "Local tourism NFT",
-    "localTourismNFT": "To revitalize local tourism the company provides full package of the blockchain services from consultations to development, issuance and design of the NFT ecosystem."
+    "title1": "기업 NFT",
+    "enterpriseNFT": "기업 전용 NFT는 회사 홈페이지의 회원 증명 NFT, 기업의 임직원 NFT 등 다양한 NFT를 기획 발행하고 있습니다. 마케팅용으로 고객과의 소통을 위한 NFT를 활용하여 고객 데이터의 주권을 고객에게 제공하고 기업과 고객이 상생하는 생태계를 조성할 수 있도록 설계 및 개발을 진행하고 있습니다.",
+    "title2": "브랜드 NFT",
+    "brandNFT": "브랜드 마케팅을 위한 NFT의 발행은 중요한 이슈로 떠오르고 있습니다. 브랜드의 가치를 NFT화 하여 주요 고객들에게 소유할 수 있도록 하거나, 타 브랜드와 콜라보에서도 NFT를 활용하고 있습니다. 메타버스 안에서의 브랜드 NFT는 더운 폭발적인 브랜드의 힘을 갖게 할 것 입니다.",
+    "title3": "지역관광 NFT",
+    "localTourismNFT": "지역 관광 활성화를 위한 NFT 생태계의 설계 및 발행에 대해서 컨설팅부터 개발 및 발행까지 블록체인의 모든 서비스를 지원해 드립니다."
   },
   "portfolio": {
     "title": "PORTFOLIO",
-    "sub_title": "Check out ECO PLANET PortFolio",
+    "sub_title": "ECO Planet의 PortFolio를 확인하세요.",
     "pf1": "ECO DeFi",
     "pf2": "ECO NFT",
     "pf3": "Teteru NFT",
-    "pf4": "World Miss University NFT",
+    "pf4": "월드미스유니버시티 NFT",
     "pf5": "ECO-In Tree NFT",
-    "pf6": "ENP GAMES PtoE game"
+    "pf6": "이엔피게임즈 PtoE 게임"
   },
   "partners": {
     "title": "PARTNER",
-    "sub_title": "Partnering companies."
+    "sub_title": "ECO Planet과 함께하는 Partner사 입니다."
   },
   "contact": {
     "title": "CONTACT US",
-    "sub_title": "Inquiries",
-    "subject": "Title",
-    "name": "Name",
-    "co_name": "Company Name",
-    "phone": "Phone",
-    "email": "E-mail",
-    "inquiry": "Inquires",
-    "agree": "I agree to the Privacy Policy..",
+    "sub_title": "문의 및 제휴 요청",
+    "subject": "제목",
+    "enter_subject": "제목을 입력하세요.",
+    "name": "이름",
+    "enter_name": "이름을 입력하세요.",
+    "co_name": "회사명",
+    "enter_co_name": "회사명을 입력하세요.",
+    "phone": "연락처",
+    "enter_phone": "연락처를 입력하세요.",
+    "email": "이메일",
+    "enter_email": "이메일을 입력하세요.",
+    "inquiry": "문의내용",
+    "enter_inquiry": "문의 내용을 입력하세요.",
+    "agree": "개인정보 처리방침에 동의합니다.",
     "send": "send"
   },
   "footer": {
-    "company": "ECO PLANET Co. Ltd.",
-    "address": "5th floor, 63, Seochojungang-ro, Seocho-gu, Seoul, Republic of Korea",
-    "telephone": "Tel: 02.6101.9955",
-    "email": "E-mail: info@eco-planet.io",
+    "company": "주식회사 에코플레닛",
+    "address": "서울특별시 서초구 서초중앙로 63, 5층(서초동, 리더스빌딩)",
+    "registrationNo": "사업자 번호: 706-88-02249",
+    "telephone": "대표전화: 02-6101-9955",
+    "email": "이메일: info@eco-planet.io",
     "copyright": "Copyright 2022 ECO PLANET ALL right reserved."
   }
 }

@@ -44,38 +44,33 @@
       </div>
 
       <div class="circle-diagram">
-        <div class="circle1" v-motion="motions.cir1">
-          <img src="@/assets/images/img_icon_circle1.png"/>
-          <span id=cir1>{{$t('cirDiagram.title1')}}</span>
-          <div class="circle1-text1">
-            <span>기업 전용 NFT는 회사 홈페이지의 회원 증명 NFT, 기업의 임직원 NFT 등 다양한 NFT를 기획 발행하고 있습니다.</span>
-            <span>마케팅용으로 고객과의 소통을 위한 NFT를 활용하여 고객 데이터의 주권을 고객에게 제공하고</span>
-            <span>기업과 고객이 상생하는 생태계를 조성할 수 있도록 설계 및 개발을 진행하고 있습니다.</span>
+        <div class="circle" v-motion="motions.cir1">
+          <div class="circle-img">
+            <img src="@/assets/images/img_icon_circle1.png"/>
+            <span>{{$t('cirDiagram.title1')}}</span>
+          </div>
+          <div class="circle-text1">{{$t('cirDiagram.enterpriseNFT')}}</div>
+        </div>
+        <div class="circle" v-motion="motions.cir2">
+          <div class="circle-text2">{{$t('cirDiagram.brandNFT')}}</div>
+          <div class="circle-img">
+            <img src="@/assets/images/img_icon_circle2.png" />
+            <span>{{$t('cirDiagram.title2')}}</span>
           </div>
         </div>
-        <div class="circle1" v-motion="motions.cir2">
-          <div class="circle1-text2">
-            <span>브랜드 마케팅을 위한 NFT의 발행은 중요한 이슈로 떠오르고 있습니다. 브랜드의 가치를 NFT화 하여</span>
-            <span>주요 고객들에게 소유할 수 있도록 하거나, 타 브랜드와 콜라보에서도 NFT를 활용하고 있습니다.</span>
-            <span>메타버스 안에서의 브랜드 NFT는 더욱 폭발적인 브랜드의 힘을 갖게 할 것 입니다.</span>
+        <div class="circle" v-motion="motions.cir3">
+          <div class="circle-img">
+            <span>{{$t('cirDiagram.title3')}}</span>
+            <img src="@/assets/images/img_icon_circle3.png" />
           </div>
-          <span id=cir2>브랜드 NFT</span>
-          <img src="@/assets/images/img_icon_circle2.png" />
-        </div>
-        <div class="circle1" v-motion="motions.cir3">
-          <span id=cir3>지역관광 NFT</span>
-          <img src="@/assets/images/img_icon_circle3.png" />
-          <div class="circle1-text1">
-            <span>지역 관광 활성화를 위한 NFT 생태계의 설계 및 발행에 대해서 컨설팅부터 개발 및 발행까지</span>
-            <span>블록체인의 모든 서비스를 지원해 드립니다.</span>
-          </div>
+          <div class="circle-text1">{{$t('cirDiagram.localTourismNFT')}}</div>
         </div>
       </div>
 
       <div class="eco-planet">
         <div class="title">
-          <span id="big" v-motion="motions.mainTitle_v">PORTFOLIO</span>
-          <span id="small" v-motion="motions.subTitle_v">ECO Planet의 PortFolio를 확인하세요.</span>
+          <span id="big" v-motion="motions.mainTitle_v">{{$t('portfolio.title')}}</span>
+          <span id="small" v-motion="motions.subTitle_v">{{$t('portfolio.sub_title')}}</span>
         </div>
       </div>
       <div class="portfolio">
@@ -84,8 +79,8 @@
 
       <div class="eco-planet">
         <div class="title">
-          <span id="big" v-motion="motions.mainTitle_v">PARTNER</span>
-          <span id="small" v-motion="motions.subTitle_v">ECO Planet과 함께하는 Partner사 입니다.</span>
+          <span id="big" v-motion="motions.mainTitle_v">{{$t('partners.title')}}</span>
+          <span id="small" v-motion="motions.subTitle_v">{{$t('partners.sub_title')}}</span>
         </div>
       </div>
       <div class="partners">
@@ -110,8 +105,8 @@
       <div class="contact-us">
         <div class="eco-planet">
           <div class="title">
-            <span id="big" v-motion="motions.mainTitle_v">CONTACT US</span>
-            <span id="small" v-motion="motions.subTitle_v">문의 및 제휴 요청</span>
+            <span id="big" v-motion="motions.mainTitle_v">{{$t('contact.title')}}</span>
+            <span id="small" v-motion="motions.subTitle_v">{{$t('contact.sub_title')}}</span>
           </div>
         </div>
 
@@ -123,67 +118,34 @@
               :visibleOnce="{x:0, opacity:1, transition:{delay: `${(index+1)*100}`}}"
             >
               <img src="@/assets/images/img_icon_contact.png" />
-              <span>{{contact[index]}}</span>
+              <span>{{$t('contact.' + contact[index])}}</span>
             </div>
             <input type="text"
               :v-model="value"
-              :placeholder="`${contact[index]}을 입력하세요.`"
+              :placeholder="`${$t('contact.' + contact[index+contact.length/2])}`"
               v-motion
               :initial="{x:200, opacity:0}"
               :visibleOnce="{x:0, opacity:1, transition:{delay: `${(index+1)*100}`}}"
               required>
           </div>
-          <!-- <div class="form">
-            <div class="form-title">
-              <img src="@/assets/images/img_icon_contact.png" />
-              <span>이름</span>
-            </div>
-            <input type="text" v-model="name" placeholder="이름을 입력하세요." v-motion="motions.contact1" required>
-          </div> -->
-          <!-- <div class="form">
-            <div class="form-title">
-              <img v-motion="motions.contact_t2" src="@/assets/images/img_icon_contact.png" />
-              <span v-motion="motions.contact_t2">업체명</span>
-            </div>
-            <input type="text" v-model="company" placeholder="업체명을 입력하세요." v-motion="motions.contact2" required>
-          </div>
-          <div class="form">
-            <div class="form-title">
-              <img v-motion="motions.contact_t3" src="@/assets/images/img_icon_contact.png" />
-              <span v-motion="motions.contact_t3">연락처</span>
-            </div>
-            <input type="text" v-model="phone" placeholder="연락처을 입력하세요." v-motion="motions.contact3" required>
-          </div>
-          <div class="form">
-            <div class="form-title">
-              <img v-motion="motions.contact_t4" src="@/assets/images/img_icon_contact.png" />
-              <span v-motion="motions.contact_t4">이메일</span>
-            </div>
-            <input type="text" v-model="email" placeholder="이메일을 입력하세요." v-motion="motions.contact4" required>
-          </div>
-          <div class="form">
-            <div class="form-title">
-              <img v-motion="motions.contact_t5" src="@/assets/images/img_icon_contact.png" />
-              <span v-motion="motions.contact_t5">제목</span>
-            </div>
-            <input type="text" v-model="title" placeholder="제목을 입력하세요." v-motion="motions.contact5" required>
-          </div> -->
         </div>
         <div class="text-form">
-          <img v-motion="motions.contact_t6" src="@/assets/images/img_icon_contact.png" />
-          <span v-motion="motions.contact_t6">내용</span>
-          <textarea v-model="message" placeholder="내용을 입력하세요." cols="30" rows="10" v-motion="motions.contact6"></textarea>
+          <div class="text-form-title" v-motion="motions.contact_t6">
+            <img src="@/assets/images/img_icon_contact.png" />
+            <span>{{$t('contact.inquiry')}}</span>
+          </div>
+          <textarea v-model="message" :placeholder="`${$t('contact.enter_inquiry')}`" cols="30" rows="10" v-motion="motions.contact6"></textarea>
         </div>
         <div class="contact-bottom">
           <div class="check-box">
             <input type="checkbox" @click="checkBox($event)">
-            <span>개인정보 처리방침에 동의합니다.</span>
+            <span>{{$t('contact.agree')}}</span>
           </div>
           <div v-if="this.checked == true" class="send-button-true" @click="sendEmail()">
-              <span>SAND</span>
+              <span>{{$t('contact.send')}}</span>
           </div>
           <div v-else class="send-button-false">
-              <span>SAND</span>
+              <span>{{$t('contact.send')}}</span>
           </div>
         </div>
       </div>
@@ -195,13 +157,14 @@
 const motions = require("../motions")
 import Carousel from '@/components/Carousel.vue';
 import PortFolio from '@/components/PortFolio.vue';
-import { useMotion } from '@vueuse/motion'
+// import { useMotion } from '@vueuse/motion'
 // import { ref } from 'vue'
 
 export default {
   components: { Carousel, PortFolio },
   data: () => ({
-    slides: ["main_img1.png", "main_img2.png", "main_img3.png"],
+    slides_kor: ["main_img1.png", "main_img2.png", "main_img3.png"],
+    slides_eng: ["main_img1.png", "main_img2.png", "main_img3.png"],
     state: {
       name: '',
       company: '',
@@ -209,7 +172,7 @@ export default {
       email: '',
       title: '',
     },
-    contact:["이름", "업체명", "연락처", "이메일", "제목"],
+    contact:["subject", "name", "co_name", "phone", "email", "enter_subject", "enter_name", "enter_co_name", "enter_phone", "enter_email"],
     partners: [
       "img_partners_WaltonChain.png",
       "img_partners_prix.png",
@@ -349,7 +312,7 @@ export default {
     .circle-diagram {
       font-family: 'Noto sans 400 KR';
       position: relative;
-      .circle1 {
+      .circle {
         margin-top: 100px;
         width: 1240px;
         height: 150px;
@@ -357,43 +320,30 @@ export default {
         box-shadow: 0 3px 12px hsl(0deg 0% 42% / 48%);
         background: #f3f3f3;
         display: flex;
+        &-img {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          span {
+            position: absolute;
+            font-size: 30px;
+            font-weight: bold;
+            color: #fff;
+          }
+        }
         &-text1 {
           display: flex;
           flex-direction: column;
           align-items: flex-start;
           justify-content: center;
-          margin-right: auto;
-          margin-left: 10px;
+          margin: 28px;
         }
         &-text2 {
           display: flex;
           flex-direction: column;
           align-items: flex-end;
           justify-content: center;
-          margin-left: auto;
-          margin-right: 10px;
-        }
-        span {font-size: 18px; font-weight: 400;}
-        span#cir1{
-          position: absolute;
-          font-size: 35px;
-          font-weight: bold;
-          color: #fff;
-          transform: translate(50%, 88%);
-        }
-        span#cir2{
-          position: absolute;
-          font-size: 35px;
-          font-weight: bold;
-          color: #fff;
-          transform: translate(585%, 88%);
-        }
-        span#cir3{
-          position: absolute;
-          font-size: 35px;
-          font-weight: bold;
-          color: #fff;
-          transform: translate(20%, 88%);
+          margin-left: 60px;
         }
         img {height:100%}
       }
@@ -441,6 +391,8 @@ export default {
           align-items: center;
           justify-content: space-between;
           &-title {
+            display: flex;
+            align-items: center;
             span {
               font-size: 16px;
               font-weight: bold;
@@ -458,13 +410,18 @@ export default {
         }
       }
       .text-form {
+        margin-top: 100px;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        margin-top: 100px;
-        span {
-          font-size: 16px;
-          font-weight: bold;
+        &-title {
+          display: flex;
+          align-items: center;
+          span {
+            font-size: 16px;
+            font-weight: bold;
+          }
+          img { margin-right:10px;}
         }
         textarea {
           margin-left: 30px;

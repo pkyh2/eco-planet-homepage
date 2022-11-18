@@ -5,29 +5,29 @@
         <div class="item" v-motion="motions.port1" @mouseenter="upHere1 = true" @mouseout="upHere1 = false">
           <div v-if="upHere1" class="link">
             <img src="@/assets/images/img_link_ecodefi.png" />
-            <div class="link-btn">Eco DeFi</div>
+            <div class="link-btn">{{$t('portfolio.pf1')}}</div>
             <div class="link-back"></div>
           </div>
           <img v-else src="@/assets/images/img_link_ecodefi.png" />
-          <span>ECO DeFi</span>
+          <span>{{$t('portfolio.pf1')}}</span>
         </div>
         <div class="item" v-motion="motions.port2" @mouseenter="upHere2 = true" @mouseout="upHere2 = false">
           <div v-if="upHere2" class="link">
             <img src="@/assets/images/img_link_econft.png" />
-            <div class="link-btn">Eco NFT</div>
+            <div class="link-btn">{{$t('portfolio.pf2')}}</div>
             <div class="link-back"></div>
           </div>
           <img v-else src="@/assets/images/img_link_econft.png" />
-          <span>ECO NFT</span>
+          <span>{{$t('portfolio.pf2')}}</span>
         </div>
         <div class="item" v-motion="motions.port3" @mouseenter="upHere3 = true" @mouseout="upHere3 = false">
           <div v-if="upHere3" class="link">
             <img src="@/assets/images/img_link_teteru.png" />
-            <div class="link-btn">Teteru NFT</div>
+            <div class="link-btn">{{$t('portfolio.pf3')}}</div>
             <div class="link-back"></div>
           </div>
           <img v-else src="@/assets/images/img_link_teteru.png" />
-          <span>Teteru</span>
+          <span>{{$t('portfolio.pf3')}}</span>
         </div>
         <div class="item" v-motion="motions.port6" @mouseenter="upHere4 = true" @mouseout="upHere4 = false">
           <div v-if="upHere4" class="link">
@@ -36,16 +36,16 @@
             <div class="link-back"></div>
           </div>
           <img v-else src="@/assets/images/img_link_wmu.png" />
-          <span>World Miss University</span>
+          <span>{{$t('portfolio.pf4')}}</span>
         </div>
         <div class="item" v-motion="motions.port5" @mouseenter="upHere5 = true" @mouseout="upHere5 = false">
           <div v-if="upHere5" class="link">
             <img src="@/assets/images/img_link_ecointree.png" />
-            <div class="link-btn">ECO-In Tree NFT</div>
+            <div class="link-btn">{{$t('portfolio.pf5')}}</div>
             <div class="link-back"></div>
           </div>
           <img v-else src="@/assets/images/img_link_ecointree.png" />
-          <span>Eco-In tree NFT</span>
+          <span>{{$t('portfolio.pf5')}}</span>
         </div>
         <div class="item" v-motion="motions.port4" @mouseenter="upHere6 = true" @mouseout="upHere6 = false">
           <div v-if="upHere6" class="link">
@@ -54,7 +54,7 @@
             <div class="link-back"></div>
           </div>
           <img v-else src="@/assets/images/img_link_enpgames.png" />
-          <span>ENP Games PtoE</span>
+          <span>{{$t('portfolio.pf6')}}</span>
         </div>
       </div>
     </div>
@@ -62,7 +62,6 @@
 </template>
 
 <script>
-// import { motions } from '../motions'
 const motions = require("../motions")
 
 export default {

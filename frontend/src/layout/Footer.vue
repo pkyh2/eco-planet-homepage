@@ -7,15 +7,15 @@
 
       <div class="middle">
         <div class="middle-text">
-          <div class="name">주식회사 에코플레닛</div>
+          <div class="name">{{$t('footer.company')}}</div>
           <div class="sub">
-            <div>서울특별시 서초구 서초중앙로 63, 5층(서초동, 리더스빌딩)</div>
+            <div>{{$t('footer.address')}}</div>
             <div class="com-info">
-              <div>사업자번호 : 706-88-02249</div>
-              <div class="interval">대표전화 : 02-6101-9955</div>
-              <div class="interval">이메일 : info@eco-planet.io</div>
+              <div>{{$t('footer.registrationNo')}}</div>
+              <div class="interval">{{$t('footer.telephone')}}</div>
+              <div class="interval">{{$t('footer.email')}}</div>
             </div>
-            <div>Copyright 2022 ECOPLANET All rights reserved.</div>
+            <div>{{$t('footer.copyright')}}</div>
           </div>
         </div>
       </div>
