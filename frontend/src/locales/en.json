@@ -6,6 +6,10 @@
     "header4" : "Partner",
     "header5" : "Inquire"
   },
+  "signInUp": {
+    "signIn": "Sign In",
+    "signUp": "Sign Up"
+  },
   "ecoPlanet": {
     "title": "ECO PLANET",
     "sub_title": "About",

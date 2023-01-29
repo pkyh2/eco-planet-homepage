@@ -95,14 +95,14 @@
             v-if="item.id <= 4 || item.id > 8"
             v-motion
             :initial="{x:0, opacity:0}"
-            :visibleOnce="{x:0, opacity:1, transition:{delay: `${(partners.length -item.id+1)*100}`}}"
+            :visibleOnce="{x:0, opacity:1, transition:{delay: `${(item.id+1)*100}`}}"
             :src="require(`@/assets/images/${item.image}`)"
             />
           <img 
             v-else
             v-motion
             :initial="{x:0, opacity:0}"
-            :visibleOnce="{x:0, opacity:1, transition:{delay: `${(item.id+1)*100}`}}"
+            :visibleOnce="{x:0, opacity:1, transition:{delay: 800}}"
             :src="require(`@/assets/images/${item.image}`)"
             />
         </div>

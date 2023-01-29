@@ -6,6 +6,10 @@
     "header4" : "파트너",
     "header5" : "문의"
   },
+  "signInUp": {
+    "signIn": "로그인",
+    "signUp": "회원가입"
+  },
   "ecoPlanet": {
     "title": "ECO PLANET",
     "sub_title": "ECO PLANET은?",
